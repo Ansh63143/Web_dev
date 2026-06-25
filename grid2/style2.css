@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* align-items: center; */
+    box-sizing: border-box;
+    /* background-color: #a8abbb; */
+}
+.main{
+    /* width: 100px; */
+    height: 500px;
+    display: grid;
+    /* gap: 10px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    background-color: rgb(132, 122, 122);
+    
+
+}
+.box{
+    border: 5px solid rgb(47, 47, 168);
+}
+#box1{
+    /* grid-row: 1/4; */
+    grid-area: 1/2/4/3;
+    background-color: rgb(90, 15, 165);
+}
+#box8{
+    /* grid-column: ; */
+}
