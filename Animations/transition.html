@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #Box{
+            width: 200px;
+            height: 150px;
+            border: none;
+            border-radius: none;
+            border: 1px solid blue;
+            background-color: rgb(216, 35, 240);
+            transition-property: all;
+            transition-duration: 3s;
+            transition-delay: 1s;
+            color: white;
+        }
+        #Box:hover{
+            background-color: rgb(237, 13, 13);
+            width: 300px;
+            transition: margin-right 2s,
+        
+        }
+        @keyframes pop-in-out {
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <button id="Box">
+        hover to see the transition!!!
+    </button>
+    <!-- <button type="">click</button> -->
+</body>
+</html>
