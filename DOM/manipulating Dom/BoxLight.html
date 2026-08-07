@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb ON/OFF</title>
+
+    <style>
+        /* body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            background:#f2f2f2;
+            font-family:Arial, sans-serif;
+        } */
+
+        .box{
+            width:250px;
+            height:250px;
+            border:3px solid black;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-bottom:20px;
+        }
+
+        .circle{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background:gray;
+            transition:0.3s;
+        }
+
+        .buttons{
+            display:flex;
+            gap:15px;
+        }
+
+        button{
+            padding:10px 25px;
+            font-size:18px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="circle" id="circle"></div>
+    </div>
+
+    <div class="buttons">
+        <button id="onBtn">ON</button>
+        <button id="offBtn">OFF</button>
+    </div>
+
+    <script>
+        let circle = document.getElementById("circle");
+        let onBtn = document.getElementById("onBtn");
+        let offBtn = document.getElementById("offBtn");
+
+        onBtn.addEventListener("click", function() {
+            circle.style.backgroundColor = "yellow";
+        });
+
+        offBtn.addEventListener("click", function() {
+            circle.style.backgroundColor = "gray";
+        });
+    </script>
+
+</body>
+</html>

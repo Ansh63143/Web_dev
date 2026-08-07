@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  /* body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+} */
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#list {
+    width: 70%;
+    max-width: 700px;
+    list-style: none;
+    padding: 0;
+}
+
+#list li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button {
+    margin: 15px 8px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn {
+    background: #4CAF50;
+    color: white;
+}
+
+#btn:hover {
+    background: #388e3c;
+}
+
+#resetBtn {
+    background: #f44336;
+    color: white;
+}
+
+#resetBtn:hover {
+    background: #d32f2f;
+}
+</style>
+<body>
+    <h1>Random Quotes</h1>
+    <ul id="list">
+
+    </ul>
+    <button id="btn">Click Me</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        const quotes = [
+{
+    quote: "The best way to get started is to quit talking and begin doing.",
+    createdBy: "Walt Disney",
+},
+{
+    quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    createdBy: "Winston Churchill",
+},
+{
+    quote: "Don't watch the clock; do what it does. Keep going.",
+    createdBy: "Sam Levenson",
+},
+{
+    quote: "Dream big and dare to fail.",
+    createdBy: "Norman Vaughan",
+},
+{
+    quote: "The future depends on what you do today.",
+    createdBy: "Mahatma Gandhi",
+},
+{
+    quote: "It always seems impossible until it's done.",
+    createdBy: "Nelson Mandela",
+},
+{
+    quote: "Believe you can and you're halfway there.",
+    createdBy: "Theodore Roosevelt",
+},
+{
+    quote: "Do one thing every day that scares you.",
+    createdBy: "Eleanor Roosevelt",
+},
+{
+    quote: "Your time is limited, so don't waste it living someone else's life.",
+    createdBy: "Steve Jobs",
+},
+{
+    quote: "Opportunities don't happen. You create them.",
+    createdBy: "Chris Grosser",
+},
+{
+    quote: "The only limit to our realization of tomorrow is our doubts of today.",
+    createdBy: "Franklin D. Roosevelt",
+},
+{
+    quote: "Hardships often prepare ordinary people for an extraordinary destiny.",
+    createdBy: "C.S. Lewis",
+},
+{
+    quote: "If you can dream it, you can do it.",
+    createdBy: "Walt Disney",
+},
+{
+    quote: "The secret of getting ahead is getting started.",
+    createdBy: "Mark Twain",
+},
+{
+    quote: "Everything you've ever wanted is on the other side of fear.",
+    createdBy: "George Addair",
+},
+{
+    quote: "Small steps every day lead to big results.",
+    createdBy: "Unknown",
+},
+{
+    quote: "Discipline is choosing between what you want now and what you want most.",
+    createdBy: "Abraham Lincoln (attributed)",
+},
+{
+    quote: "Great things never come from comfort zones.",
+    createdBy: "Unknown",
+},
+{
+    quote: "Don't limit your challenges. Challenge your limits.",
+    createdBy: "Jerry Dunn",
+},
+{
+    quote: "Success usually comes to those who are too busy to be looking for it.",
+    createdBy: "Henry David Thoreau",
+},
+];
+        let e= document.getElementById("btn");
+        e.addEventListener("click", ()=>{
+            let rIdx = Math.floor(Math.random()*quotes.length);
+            let quote = quotes[rIdx].quote;
+            let author = quotes[rIdx].createdBy;
+            let list = document.getElementById("list");
+            let newEle = document.createElement("li");
+            newEle.innerHTML = `"${quote}" - ${author}`;
+            list.replaceChild(newEle,list.firstChild);
+        })
+
+        let resetBtn = document.getElementById("resetBtn");
+        resetBtn.addEventListener("click", ()=>{
+            document.getElementById("list").innerHTML = "";
+        })
+    </script>
+</body>
+</html>

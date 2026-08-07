@@ -1,7 +1,11 @@
-Object().__proto__.sendDepositEmail = function (amount) {
-  console.log(`To ${this.__accountHolderName} Laxman,
-    This is to inform you that amount of Rs.${amount} is deposited`);
-};
+let name  ="Ansh";
+console.log(Object().__proto__);
+let person =()=> {
+    this.name = name;
+}
+console.log(name.split("").reverse().join(""));
+console.log(name.split("").map((char) => char.toLowerCase()).join("*"));
+
 
 class Bank {
   // Private Properties and Methods
@@ -25,6 +29,10 @@ class Bank {
     this.balance = amount;
   }
 
+  get accountHolderName() {
+    return this.__accountHolderName;
+  }
+
   set email(emailvalue) {
     this._email = emailvalue;
   }
@@ -35,10 +43,11 @@ class Bank {
 
   deposit(amount) {
     this.balance += Number(amount);
-
     console.log(
       `Amount of Rs. ${amount} is Deposited by ${this.__accountHolderName}`
     );
+    console.log(Object());
+    this.sendDepositEmail(9000);
   }
   checkBalance() {
     console.log(`Your balance is ${this.balance}`);
@@ -53,10 +62,10 @@ class Bank {
         console.log(`Amount Withdrawn : Rs ${amount}`);
         console.log(this);
 
-        let sendEmail = sendWithdrawEmail.bind(
+        let sendEmail = this.sendWithdrawEmail.bind(
           this,
           amount,
-          this.__accountHolderName
+          this.accountHolderName
         );
         console.log(sendEmail());
       }
@@ -69,25 +78,31 @@ class Bank {
     this.#calculatePercentage();
   }
   checkBankProfile() {
-    const { _accountHolderName, mobile, email, balance } = this;
-    console.log(`Account Holder = ${_accountHolderName} `);
-    console.log(`Mobile no. = ${mobile}`);
-    console.log(`Email = ${email}`);
-    console.log(`Account Balance = ${Number(balance)}`);
+    console.log(`Account Holder = ${this.accountHolderName} `);
+    console.log(`Mobile no. = ${this.mobile}`);
+    console.log(`Email = ${this.email}`);
+    console.log(`Account Balance = ${Number(this.balance)}`);
   }
 }
 
-function sendWithdrawEmail(amount, name) {
-  return `To ${name},
-    This is to inform you that amount of Rs.${amount} is withdrawn | Available Balance is ${this.balance}`;
+Bank.prototype.sendDepositEmail = function (amount) {
+  console.log(this);
+    return `To ${this.accountHolderName},\n    This is to inform you that amount of Rs.${amount} is deposited`;
+};
+
+Bank.prototype.sendWithdrawEmail = function (amount, name) {
+  return `To ${name},\n    This is to inform you that amount of Rs.${amount} is withdrawn | Available Balance is ${this.balance}`;
 }
 
-function InsufficientFundEmail(amount) {
-  return `To ${this.accountHolderName},
-    You're trying to withdraw Balance then available Rs .${amount}`;
+Bank.prototype.InsufficientFundEmail = function (amount) {
+  return `To ${this.accountHolderName},\n    You're trying to withdraw Balance then available Rs .${amount}`;
 }
 
 let obj1 = new Bank('Raj', '5959561000', 'raj45@gmail.com', 522000);
 
 obj1.deposit(9000);
-// Object().__proto__.sendDepositEmail.call(obj1, 9000);
+console.log('Calling');
+
+console.log(obj1.sendDepositEmail(90000));
+console.log(obj1.sendWithdrawEmail(90000, 'Raj'));
+console.log(obj1.InsufficientFundEmail(90000));

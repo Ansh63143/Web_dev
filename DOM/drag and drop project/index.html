@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .containers {
+            min-height: 300px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-content: flex-start;
+            border: 2px solid black;
+        }
+
+        .containers:nth-child(1) {
+            background: lightgray;
+        }
+
+        .containers:nth-child(2) {
+            background: lightgray;
+        }
+
+        .draggable {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            cursor: grab;
+            border: 2px solid black;
+        }
+
+        .dragging {
+            opacity: 0.5;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container">
+
+    <div class="containers">
+        <img class="draggable" src="https://picsum.photos/id/1015/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1025/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1035/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1043/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1050/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1069/300/300" draggable="true">
+    </div>
+
+    <div class="containers">
+        <img class="draggable" src="https://picsum.photos/id/1074/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1084/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1080/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1060/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1057/300/300" draggable="true">
+        <img class="draggable" src="https://picsum.photos/id/1040/300/300" draggable="true">
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

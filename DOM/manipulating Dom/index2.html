@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, voluptates?
+  </p>
+  <script>
+    let para = document.getElementsByTagName('p')[0];
+    // style Property
+    // para.style.backgroundColor = 'red';
+    // para.style.padding = '2px 10px';
+    // para.style.fontSize = '1.5rem';
+
+    // style.cssText
+    para.style.cssText = 'background:red;font-size:1.5rem;padding:2px 10px;';
+    console.log(para);
+  </script>
+</body>
+</html>

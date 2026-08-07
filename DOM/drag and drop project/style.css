@@ -1,0 +1,11 @@
+#container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
+  gap: 2rem;
+  grid-auto-rows: 5px;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
