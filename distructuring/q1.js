@@ -20,7 +20,7 @@ function createArray() {
         push,
         getElement,
         getArray
-    };
+    }; 
 }
 const myArray = createArray();
 
